@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="af9bb139-2be2-490d-8060-3035fc1abe1a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#DC143C">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFBFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#A52A2A">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#DC143C">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#FFBFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Barang" uuid="36a828b2-af13-4622-a725-cdc3853d45f3">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     alat_tulis.`kode` AS alat_tulis_kode,
+     alat_tulis.`nama` AS alat_tulis_nama,
+     alat_tulis.`stok` AS alat_tulis_stok,
+     alat_tulis.`satuan` AS alat_tulis_satuan
+FROM
+     `alat_tulis` alat_tulis]]>
+		</queryString>
+		<field name="alat_tulis_kode" class="java.lang.String"/>
+		<field name="alat_tulis_nama" class="java.lang.String"/>
+		<field name="alat_tulis_stok" class="java.lang.Integer"/>
+		<field name="alat_tulis_satuan" class="java.lang.String"/>
+		<group name="alat_tulis_kode">
+			<groupExpression><![CDATA[$F{alat_tulis_kode}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="defaultValue" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer("1")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     alat_tulis.`kode` AS alat_tulis_kode,
+     alat_tulis.`nama` AS alat_tulis_nama,
+     alat_tulis.`stok` AS alat_tulis_stok,
+     alat_tulis.`satuan` AS alat_tulis_satuan
+FROM
+     `alat_tulis` alat_tulis]]>
+	</queryString>
+	<field name="alat_tulis_kode" class="java.lang.String"/>
+	<field name="alat_tulis_nama" class="java.lang.String"/>
+	<field name="alat_tulis_stok" class="java.lang.Integer"/>
+	<field name="alat_tulis_satuan" class="java.lang.String"/>
+	<variable name="noUrut" class="java.lang.Integer" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$V{noUrut}]]></variableExpression>
+	</variable>
+	<group name="alat_tulis_kode">
+		<groupExpression><![CDATA[$F{alat_tulis_kode}]]></groupExpression>
+	</group>
+	<group name="alat_tulis_nama">
+		<groupExpression><![CDATA[$F{alat_tulis_nama}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="103" forecolor="#FFFFFF" backcolor="#FF0000" uuid="961ba6e0-99d5-4185-9ebc-7ef02c40f474"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="88" y="17" width="372" height="41" forecolor="#FFFFFF" uuid="58d31596-62fd-4d22-a15e-357f0e3a4c63"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Infomedia Solusi Humanika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="65" width="379" height="20" forecolor="#FFFFFF" uuid="ca4e203c-3c15-4b63-aee7-5cd07aaae761"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[PT. Infomedia Solusi Humanika Jalan Terusan Buah Batu No. 91 Bandung.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="76" splitType="Stretch">
+			<rectangle>
+				<reportElement x="48" y="56" width="77" height="20" uuid="97d27d22-e234-4521-ba70-47fa4444eddd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="125" y="56" width="254" height="20" uuid="a0fc2749-d4c9-46f5-a1ca-3e89e7d4729f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="379" y="56" width="56" height="20" uuid="0094d2ee-e389-4345-b8bc-2b82aa085ddb"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="435" y="56" width="120" height="20" uuid="9e88b74e-0196-46b5-9309-d6a99682c927"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="206" y="10" width="137" height="35" uuid="1b4377fc-d19b-48f2-b304-3b1033a42d53"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daftar Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="56" width="77" height="20" uuid="40452c25-26aa-4e35-a22d-aa9d7deed9db"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Kode ATK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="56" width="254" height="20" uuid="c81690fa-4555-4169-8643-25c7062bf9f3"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Alat Tulis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="56" width="56" height="20" uuid="89acce59-8d20-4222-a95e-061517e98885"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Stok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="56" width="120" height="20" uuid="b20de6ad-aa83-461d-87b5-e2aca5ed4664"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Satuan]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="56" width="48" height="20" uuid="5293dca6-84ec-4dc0-9e99-aef785330ccd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="56" width="48" height="20" uuid="dfedfd7c-abb4-47de-9be6-5ad37e6a970a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="81" y="28" width="100" height="20" uuid="7d1bc58a-925f-43cc-9144-114b94de34bc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="28" width="81" height="20" uuid="84521fda-b72a-4a61-a85a-9ae202fedca9"/>
+				<text><![CDATA[Tanggal Cetak :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<elementGroup/>
+			<rectangle>
+				<reportElement x="125" y="0" width="254" height="29" uuid="9688e037-b28a-4ec4-af81-727de2f883c8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="379" y="0" width="56" height="29" uuid="625335ea-6fbe-47cf-9b85-63cc4743c1d2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="435" y="0" width="120" height="29" uuid="8ebff2bb-a090-4016-9a20-3138bddb2a1b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="48" height="29" uuid="f73c63c5-4a70-466d-a72c-19d2f41f8613"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="48" y="0" width="77" height="29" uuid="0e777d38-b735-47f9-a9ed-556f19daf714"/>
+			</rectangle>
+			<textField>
+				<reportElement x="48" y="0" width="77" height="29" uuid="7a36e7af-6b5a-4382-82bd-1334094d530e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alat_tulis_kode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="241" height="29" uuid="716d923d-e4c2-41ba-a13d-a4c4a6092b77"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alat_tulis_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="0" width="56" height="29" uuid="0ed6e537-270e-4dbf-b8b4-179ad3784bdc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alat_tulis_stok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="120" height="29" uuid="756622f5-34a3-4dfd-9564-eed3fee5648f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alat_tulis_satuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="48" height="29" uuid="35cd8227-29bc-4531-914e-5eafddbf293f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new Integer($V{noUrut}.intValue()+$P{defaultValue}.intValue())]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="515" y="34" width="40" height="20" uuid="fdef9f24-cdc1-46d8-92d1-fe460fb77c4d"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

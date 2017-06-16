@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ae4df7a0-b156-4e3c-973f-294a2d4155ab">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="defaultValue" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer("1")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     trans_atk_keluar.`kode_klr` AS trans_atk_keluar_kode_klr,
+     trans_atk_keluar.`kode_atk` AS trans_atk_keluar_kode_atk,
+     trans_atk_keluar.`tgl_klr` AS trans_atk_keluar_tgl_klr,
+     trans_atk_keluar.`jumlah` AS trans_atk_keluar_jumlah,
+     trans_atk_keluar.`id_pegawai` AS trans_atk_keluar_id_pegawai,
+     pegawai.`id_pegawai` AS pegawai_id_pegawai,
+     pegawai.`nama` AS pegawai_nama,
+     pegawai.`divisi` AS pegawai_divisi,
+     pegawai.`no_hp` AS pegawai_no_hp,
+     alat_tulis.`kode` AS alat_tulis_kode,
+     alat_tulis.`nama` AS alat_tulis_nama,
+     alat_tulis.`stok` AS alat_tulis_stok,
+     alat_tulis.`satuan` AS alat_tulis_satuan
+FROM
+     `pegawai` pegawai INNER JOIN `trans_atk_keluar` trans_atk_keluar ON pegawai.`id_pegawai` = trans_atk_keluar.`id_pegawai`
+     INNER JOIN `alat_tulis` alat_tulis ON trans_atk_keluar.`kode_atk` = alat_tulis.`kode`]]>
+	</queryString>
+	<field name="trans_atk_keluar_kode_klr" class="java.lang.String"/>
+	<field name="alat_tulis_nama" class="java.lang.String"/>
+	<field name="trans_atk_keluar_tgl_klr" class="java.sql.Date"/>
+	<field name="pegawai_nama" class="java.lang.String"/>
+	<field name="pegawai_divisi" class="java.lang.String"/>
+	<field name="trans_atk_keluar_jumlah" class="java.lang.Integer"/>
+	<variable name="noUrut" class="java.lang.Integer" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$V{noUrut}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="97" forecolor="#FFFFFF" backcolor="#FF0000" uuid="7a836f40-9341-47c1-baa3-40ad0841277f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="100" y="11" width="372" height="41" forecolor="#FFFFFF" uuid="bba5d72f-5973-4e08-9479-7792154574e9"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Infomedia Solusi Humanika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="60" width="379" height="20" forecolor="#FFFFFF" uuid="bdc17165-2155-4209-88bb-18ed011a90f3"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[PT. Infomedia Solusi Humanika Jalan Terusan Buah Batu No. 91 Bandung.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="96" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="76" width="26" height="20" uuid="e11a01d6-cdba-4b2f-aa80-05d7cb5ef3a7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="26" y="76" width="93" height="20" uuid="a8efdc39-540b-4046-aaac-c603bb8bbba4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="119" y="76" width="120" height="20" uuid="d93ecc27-e3f4-4a91-a9f5-94a6c0cb740c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="239" y="76" width="69" height="20" uuid="b607304a-4be3-48bd-8792-43c94c4dc648"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="521" y="76" width="34" height="20" uuid="1af61db4-2a07-4ec0-be4f-6ab56090f534"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="149" y="17" width="275" height="35" uuid="79043aad-b08d-4808-84e5-11ed5e101f96"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Transaksi Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="76" width="69" height="20" uuid="956a2717-2bbe-4808-b433-1a61e060d39a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tgl Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="76" width="93" height="20" uuid="3c01e235-c0bc-4b04-9efe-052ac54b695c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Kode Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="521" y="76" width="34" height="20" uuid="06152556-5ca3-405c-9d45-0aeab35c583e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jml]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="76" width="26" height="20" uuid="3420063b-ed0d-420c-846d-819bf437898e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="308" y="76" width="107" height="20" uuid="33280f39-519e-4e84-bb66-59048687179a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="308" y="76" width="107" height="20" uuid="d9050f7b-4120-452e-bda2-aa0df11cc3cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Pegawai]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="415" y="76" width="106" height="20" uuid="18c667dd-f2f9-4a8e-9aef-e43a66f330ee"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="415" y="76" width="106" height="20" uuid="ce8e4e0d-22bf-4697-b5de-68240e195d05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Divisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="76" width="120" height="20" uuid="0655eb6e-2cf5-4e36-bed7-676c079aaa78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Alat Tulis Kantor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="52" width="76" height="20" uuid="7c115d00-7f79-44c1-9892-96d900df92e5"/>
+				<text><![CDATA[Tanggal Cetak : ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="77" y="52" width="100" height="20" uuid="fdbb64c3-dc7c-43b9-b789-ae4527111e71"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<rectangle>
+				<reportElement x="0" y="0" width="26" height="20" uuid="7add9110-ef71-4ee5-96e2-d828c66dd753"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="26" y="0" width="93" height="20" uuid="3985d503-05b0-4427-8efc-513ddef0b0b1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="119" y="0" width="120" height="20" uuid="1c25174e-91f3-494d-bb93-4e644fd8b196"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="239" y="0" width="69" height="20" uuid="e7f1c2b4-c1ea-4e7e-8440-1803d8edf546"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="521" y="0" width="34" height="20" uuid="331ea145-1792-4c95-a461-90ce189ff3d3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="308" y="0" width="107" height="20" uuid="20ff49d2-6989-4b40-943b-34c5e90cb431"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="415" y="0" width="106" height="20" uuid="e20974a0-8747-4213-8e75-792b274ff496"/>
+			</rectangle>
+			<textField>
+				<reportElement x="26" y="0" width="93" height="20" uuid="b946be35-a74f-4370-a246-7a76bcd4c915"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trans_atk_keluar_kode_klr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="115" height="20" uuid="c0f6b757-a8e0-4acc-8265-7afc09cfbcee"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alat_tulis_nama}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="239" y="0" width="69" height="20" uuid="0ba7ecba-ecb6-490b-ab4b-8301a0fdc501"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trans_atk_keluar_tgl_klr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="0" width="104" height="20" uuid="96956068-fcf2-48c5-b4a2-262831b8e493"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pegawai_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="0" width="100" height="20" uuid="877560e6-7410-40b5-a19d-dd6410844206"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pegawai_divisi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="521" y="0" width="34" height="20" uuid="aabcaf60-0f27-4f59-bd3b-a054ea0cef79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trans_atk_keluar_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="26" height="20" uuid="08350918-6335-4471-9ffd-3bce457d345a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new Integer($V{noUrut}.intValue()+$P{defaultValue}.intValue())]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="521" y="30" width="34" height="20" uuid="343f9bf0-87dc-4561-928e-996c5fb13f69"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

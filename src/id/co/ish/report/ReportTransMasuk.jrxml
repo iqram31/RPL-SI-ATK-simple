@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="944e1e03-9172-4d0a-99c7-b54342252dc0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="defaultValue" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer("1")]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     trans_atk_masuk.`kode_msk` AS trans_atk_masuk_kode_msk,
+     trans_atk_masuk.`kode_atk` AS trans_atk_masuk_kode_atk,
+     trans_atk_masuk.`tgl_msk` AS trans_atk_masuk_tgl_msk,
+     trans_atk_masuk.`jumlah` AS trans_atk_masuk_jumlah,
+     alat_tulis.`kode` AS alat_tulis_kode,
+     alat_tulis.`nama` AS alat_tulis_nama,
+     alat_tulis.`stok` AS alat_tulis_stok,
+     alat_tulis.`satuan` AS alat_tulis_satuan
+FROM
+     `alat_tulis` alat_tulis INNER JOIN `trans_atk_masuk` trans_atk_masuk ON alat_tulis.`kode` = trans_atk_masuk.`kode_atk`]]>
+	</queryString>
+	<field name="trans_atk_masuk_kode_msk" class="java.lang.String"/>
+	<field name="alat_tulis_nama" class="java.lang.String"/>
+	<field name="trans_atk_masuk_tgl_msk" class="java.sql.Date"/>
+	<field name="trans_atk_masuk_jumlah" class="java.lang.Integer"/>
+	<variable name="noUrut" class="java.lang.Integer" resetType="None" calculation="Count">
+		<variableExpression><![CDATA[$V{noUrut}]]></variableExpression>
+	</variable>
+	<group name="trans_atk_masuk_tgl_msk">
+		<groupExpression><![CDATA[$F{trans_atk_masuk_tgl_msk}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="97" forecolor="#FFFFFF" backcolor="#FF0000" uuid="38f7a2a5-082b-4153-8d97-f7c676e152bd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="90" y="14" width="372" height="41" forecolor="#FFFFFF" uuid="812198cd-88ed-43c5-9d19-db91f0d26732"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Infomedia Solusi Humanika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="65" width="404" height="20" forecolor="#FFFFFF" uuid="199f377e-23c3-4773-94a2-c085da6624a0"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[PT. Infomedia Solusi Humanika Jalan Terusan Buah Batu No. 91 Bandung.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="149" y="13" width="275" height="35" uuid="6bb71e82-6016-4d5c-954e-1f68915d812d"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Transaksi Masuk]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="22" y="78" width="42" height="20" uuid="b9693d78-d83d-4ad3-9fdf-f02524f1f6d2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="64" y="78" width="97" height="20" uuid="9d6a6aed-a8c6-40c0-af16-969c4c28151d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="78" width="174" height="20" uuid="bc448f24-876e-45fa-af69-a894837498a8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="335" y="78" width="100" height="20" uuid="4a9c8d7f-4b69-4174-b51b-c8460708c663"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="435" y="78" width="85" height="20" uuid="0ab72d60-fb11-469c-88ed-dd4b0e1f0506"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="22" y="78" width="42" height="20" uuid="90b2a993-dac1-4dcb-bb96-cced571221d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="78" width="97" height="20" uuid="db8d508a-557a-4839-a520-d89689b63efc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Kode Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="78" width="174" height="20" uuid="e3f8d595-606e-45db-98a7-004c5a0046c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Alat Tulis Kantor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="78" width="100" height="20" uuid="11f078e5-a1fc-4092-b5c1-ef22b475eac7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tanggal Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="78" width="85" height="20" uuid="cea00499-7e8d-48df-93f1-a8c56eaa4d4f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="76" y="55" width="100" height="20" uuid="f9c26a28-83eb-4ab5-96f6-47d1dcaca240"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="55" width="76" height="20" uuid="47eb2d78-e292-42c4-8055-32a30fdfca44"/>
+				<text><![CDATA[Tanggal Cetak : ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="64" y="0" width="97" height="20" uuid="01d1b1af-43d9-4a1b-a4b8-a914072d11f7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="0" width="174" height="20" uuid="b2efe416-cdae-4c01-b761-f33fbafdd017"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="335" y="0" width="100" height="20" uuid="22b5ada5-3276-43c9-8d2c-28394db3b45f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="435" y="0" width="85" height="20" uuid="8a84d365-f005-4e5a-a05f-40aad0c8b711"/>
+			</rectangle>
+			<textField>
+				<reportElement x="64" y="0" width="97" height="20" uuid="ca70b1d2-12f1-4b45-aca6-f5414f747838"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trans_atk_masuk_kode_msk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="0" width="162" height="20" uuid="38500585-567e-4747-922b-1f2b6e6b86b3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alat_tulis_nama}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="335" y="0" width="100" height="20" uuid="9b6ca59e-f366-482a-8e16-5ffe7ead43bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trans_atk_masuk_tgl_msk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="85" height="20" uuid="bc229aec-abb4-4da0-8e6a-ea7c42e9c4fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trans_atk_masuk_jumlah}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="22" y="0" width="42" height="20" uuid="41cbd455-35af-484c-92c7-10f5cd009288"/>
+			</rectangle>
+			<textField>
+				<reportElement x="22" y="0" width="42" height="20" uuid="a96facae-2827-4cc4-9778-c8ec1a3d191f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new Integer($V{noUrut}.intValue()+$P{defaultValue}.intValue())]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="521" y="30" width="34" height="20" uuid="ee729381-63ff-4fa5-818d-74c895d0d049"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
